@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRightCircle, List, Timer } from "lucide-react"
+import { ArrowRightCircle } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { TypingEffect } from "./components/typing-effect"
@@ -12,7 +12,7 @@ export default function Home() {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleStartQuiz = () => {
-    router.push("/verbs")
+    router.push("/quiz")
   }
 
   return (
