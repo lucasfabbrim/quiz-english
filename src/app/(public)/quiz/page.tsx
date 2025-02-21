@@ -1,64 +1,187 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRightCircle } from "lucide-react"
-import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
-export default function Home() {
-  const router = useRouter()
-  const [isHovered, setIsHovered] = useState(false)
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
 
-  const handleStartQuiz = () => {
-    router.push("/quiz")
+import Men from "@/assets/homem.png"
+import { quizData } from "@/utils/anwsers"
+
+export default function QuizPage() {
+  
+  const allQuestions = Object.values(quizData).flat()
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
+  const [isChecked, setIsChecked] = useState(false)
+  const [score, setScore] = useState(0)
+
+  const totalQuestions = allQuestions.length 
+  const currentQuestion = allQuestions[currentIndex]
+
+  // Progresso de 0 a 100
+  const progressValue = ((currentIndex + 1) / totalQuestions) * 100
+
+  function handleSelectAnswer(option: string) {
+    if (!isChecked) {
+      setSelectedAnswer(option)
+    }
   }
 
+  function handleCheck() {
+    if (!selectedAnswer) return
+    setIsChecked(true)
+
+    // Verifica se acertou
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+      setScore((prev) => prev + 1)
+    }
+  }
+
+  function handleNext() {
+    setIsChecked(false)
+    setSelectedAnswer(null)
+    setCurrentIndex((prev) => prev + 1)
+  }
+
+  const isLastQuestion = currentIndex === totalQuestions - 1
+  const showNextButton = isChecked && !isLastQuestion
+  const showFinishButton = isChecked && isLastQuestion
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#17153b] via-[#2e236c] to-[#433d8b] flex items-center justify-center p-4">
+    <main className="min-h-screen bg-gradient-to-br from-[#17153b] via-[#2e236c] to-[#433d8b] flex flex-col items-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col w-full max-w-xs"
+        className="flex flex-col w-full max-w-sm h-full flex-1 justify-between"
       >
-                
-        <div className="flex items-center space-x-3 mb-8">
-          <div className="flex items-center gap-2">
-            ⏰
-            <span className="tracking-tighter text-zinc-400">30m</span>
-          </div>
-          <div className="text-zinc-600" aria-hidden="true">
-            |
-          </div>
-          <div className="flex items-center gap-2">
-            📚
-            <span className="text-zinc-400">36 questions</span>
-          </div>
-        </div>
-        <div className="text-zinc-300 space-y-2 mb-8">
-          <p className="text-base">do you really know the most commonly used <span className="underline">english verbs?</span></p>
-          <p className="text-sm tracking-tighter text-zinc-400 font-light">
-            (to be, to have, to be able, to come, to go, to know, to take, to want, to say/tell, to do/make, to see, to
-            give)
+        {/* Top Section */}
+        <div className="flex flex-col w-full">
+          <Progress value={progressValue} />
+
+          <div className="flex flex-col gap-1 justify-start text-start items-start">
+            
+            <p className="text-zinc-200 tracking-tighter text-2xl">
+            Complete the blank space
           </p>
+          </div>
+          <p className="text-zinc-400 text-sm mt-2">
+            {`Question ${currentIndex + 1} of ${totalQuestions}`}
+          </p>
+
+          <div className="flex items-center mt-6 py-4 space-x-4">
+            <div className="relative w-20 h-20 overflow-hidden">
+              <Image 
+                alt="Men" 
+                src={Men} 
+                fill
+                className="object-cover"
+              />
+            </div>
+            <Card className="bg-transparent rounded-lg text-zinc-200 border border-zinc-600 w-full">
+              <CardContent className="py-4 px-4">
+                {/* Frase com lacuna */}
+                {currentQuestion.phrase}
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="py-4 flex flex-col space-y-4">
+            {currentQuestion.options.map((option) => {
+              const isSelected = selectedAnswer === option
+              const isCorrect = option === currentQuestion.correctAnswer
+
+              let buttonClasses =
+                "border text-lg border-purple-500 border-b-4 py-4 text-zinc-200 w-full bg-transparent rounded-full transition-colors"
+
+              // Se já foi checada, colorir dependendo do acerto/erro
+              if (isChecked) {
+                if (isSelected && isCorrect) {
+                  buttonClasses += " bg-green-600/60"
+                } else if (isSelected && !isCorrect) {
+                  buttonClasses += " bg-red-600/60"
+                }
+              } else if (isSelected) {
+                // Se ainda não checou, mas selecionou
+                buttonClasses += " bg-white/10"
+              }
+
+              return (
+                <Button
+                  key={option}
+                  className={buttonClasses}
+                  onClick={() => handleSelectAnswer(option)}
+                  disabled={isChecked}
+                >
+                  {option}
+                </Button>
+              )
+            })}
+          </div>
+
+          {/* Feedback de correção */}
+          {isChecked && selectedAnswer !== currentQuestion.correctAnswer && (
+            <div
+              className="text-red-400 mt-2"
+              dangerouslySetInnerHTML={{ __html: currentQuestion.correction }}
+            />
+          )}
+          {isChecked && selectedAnswer === currentQuestion.correctAnswer && (
+            <div className="text-green-400 mt-2">Correct!</div>
+          )}
         </div>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Button
-            variant="default"
-            onClick={handleStartQuiz}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="w-full bg-gradient-to-r from-purple-600/80 to-zinc-600/5 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-white/20 hover:to-zinc-600/20"
-          >
-            Start quiz
-            <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
-              <ArrowRightCircle size={24} className="text-zinc-300" aria-hidden="true" />
-            </motion.div>
-          </Button>
+
+        {/* Bottom Section */}
+        <motion.div 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="pt-4 pb-6"
+        >
+          {/* Botão Check */}
+          {!isChecked && (
+            <Button
+              variant="default"
+              className="w-full bg-purple-600/80 rounded-full py-4 text-white text-2xl hover:bg-purple-700/90 transition-colors"
+              onClick={handleCheck}
+              disabled={!selectedAnswer}
+            >
+              Check
+            </Button>
+          )}
+
+          {/* Botão Next */}
+          {showNextButton && (
+            <Button
+              variant="default"
+              className="mt-2 w-full bg-blue-600/80 rounded-full py-4 text-white text-2xl hover:bg-blue-700/90 transition-colors"
+              onClick={handleNext}
+            >
+              Next
+            </Button>
+          )}
+
+          {/* Botão Finish */}
+          {showFinishButton && (
+            <div className="flex flex-col space-y-2">
+              <Button
+                variant="default"
+                className="w-full bg-green-600/80 rounded-full py-4 text-white text-2xl hover:bg-green-700/90 transition-colors"
+                onClick={() => alert(`Quiz finished! Your score: ${score}/${totalQuestions}`)}
+              >
+                Finish
+              </Button>
+              <p className="text-center text-zinc-300">
+                Your score: {score}/{totalQuestions}
+              </p>
+            </div>
+          )}
         </motion.div>
       </motion.div>
     </main>
   )
 }
-

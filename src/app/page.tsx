@@ -6,6 +6,7 @@ import { ArrowRightCircle } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { TypingEffect } from "./components/typing-effect"
+import Link from "next/link"
 
 export default function Home() {
   const router = useRouter()
@@ -53,7 +54,7 @@ export default function Home() {
             onClick={handleStartQuiz}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="w-full bg-gradient-to-r from-purple-600/80 to-zinc-600/5 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-white/20 hover:to-zinc-600/20"
+            className="w-full bg-gradient-to-r from-purple-600/80 to-zinc-600/5 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-purple-600/90 hover:to-zinc-600/20"
           >
             Start quiz
             <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
@@ -61,6 +62,14 @@ export default function Home() {
             </motion.div>
           </Button>
         </motion.div>
+        <div className="mt-10 justify-center text-center">
+          <Link 
+            href="https://linkedin.com/in/lucas-mendes-f" 
+            className=" underline text-xs text-zinc-400"
+          >
+            created by lucas mendes
+          </Link>
+        </div>
       </motion.div>
     </main>
   )
