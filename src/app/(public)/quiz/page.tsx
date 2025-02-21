@@ -38,7 +38,7 @@ export default function Home() {
             </div>
           </div>
           <div className="text-zinc-300 space-y-2 mb-8">
-            <p className="text-base">how well do you really know the most commonly used <span className="underline">english verbs?</span> 👇🏼</p>
+            <p className="text-base">do you really know the most commonly used <span className="underline">english verbs?</span> 👇🏼</p>
             <p className="text-sm tracking-tighter text-zinc-400 font-light">
               (to be, to have, to be able, to come, to go, to know, to take, to want, to say/tell, to do/make, to see, to
               give)
