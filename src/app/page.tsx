@@ -54,7 +54,7 @@ export default function Home() {
             onClick={handleStartQuiz}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="w-full bg-gradient-to-r from-purple-600/80 to-zinc-600/5 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-purple-600/90 hover:to-zinc-600/20"
+            className="w-full bg-purple-600/80 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-purple-600/90 hover:to-zinc-600/20"
           >
             Start quiz
             <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>

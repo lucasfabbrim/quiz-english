@@ -1,29 +1,47 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import { X } from 'lucide-react'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 import Men from "@/assets/homem.png"
-import { quizData } from "@/utils/anwsers"
+import { quizData, QuizItem } from "@/utils/anwsers"
 
 export default function QuizPage() {
-  
-  const allQuestions = Object.values(quizData).flat()
-
+  const router = useRouter()
+  const [questions, setQuestions] = useState<QuizItem[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [isChecked, setIsChecked] = useState(false)
   const [score, setScore] = useState(0)
+  const [showCancelModal, setShowCancelModal] = useState(false)
 
-  const totalQuestions = allQuestions.length 
-  const currentQuestion = allQuestions[currentIndex]
+  useEffect(() => {
+    const selectedQuestions = Object.values(quizData).flatMap(verbQuestions => 
+      shuffleArray(verbQuestions).slice(0, 3)
+    )
+    setQuestions(shuffleArray(selectedQuestions))
+  }, [])
 
-  // Progresso de 0 a 100
+  const totalQuestions = questions.length
+  const currentQuestion = questions[currentIndex]
+
   const progressValue = ((currentIndex + 1) / totalQuestions) * 100
 
   function handleSelectAnswer(option: string) {
@@ -36,7 +54,6 @@ export default function QuizPage() {
     if (!selectedAnswer) return
     setIsChecked(true)
 
-    // Verifica se acertou
     if (selectedAnswer === currentQuestion.correctAnswer) {
       setScore((prev) => prev + 1)
     }
@@ -48,12 +65,30 @@ export default function QuizPage() {
     setCurrentIndex((prev) => prev + 1)
   }
 
+  function handleCancel() {
+    setShowCancelModal(true)
+  }
+
+  function handleConfirmCancel() {
+    router.push('/')
+  }
+
   const isLastQuestion = currentIndex === totalQuestions - 1
   const showNextButton = isChecked && !isLastQuestion
   const showFinishButton = isChecked && isLastQuestion
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#17153b] via-[#2e236c] to-[#433d8b] flex flex-col items-center p-4">
+      <div className="w-full max-w-sm flex justify-end mb-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-white hover:bg-white/10"
+          onClick={handleCancel}
+        >
+          <X className="h-6 w-6" />
+        </Button>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -62,52 +97,50 @@ export default function QuizPage() {
       >
         {/* Top Section */}
         <div className="flex flex-col w-full">
-          <Progress value={progressValue} />
+          <Progress value={progressValue} className="mb-4" />
 
           <div className="flex flex-col gap-1 justify-start text-start items-start">
-            
             <p className="text-zinc-200 tracking-tighter text-2xl">
-            Complete the blank space
-          </p>
+              Complete the blank space
+            </p>
           </div>
           <p className="text-zinc-400 text-sm mt-2">
             {`Question ${currentIndex + 1} of ${totalQuestions}`}
           </p>
 
           <div className="flex items-center mt-6 py-4 space-x-4">
-            <div className="relative w-20 h-20 overflow-hidden">
+            <div className="relative w-20 h-20 overflow-hidden rounded-full">
               <Image 
                 alt="Men" 
-                src={Men} 
+                src={Men || "/placeholder.svg"} 
                 fill
                 className="object-cover"
               />
             </div>
             <Card className="bg-transparent rounded-lg text-zinc-200 border border-zinc-600 w-full">
               <CardContent className="py-4 px-4">
-                {/* Frase com lacuna */}
-                {currentQuestion.phrase}
+                {currentQuestion?.phrase}
               </CardContent>
             </Card>
           </div>
 
           <div className="py-4 flex flex-col space-y-4">
-            {currentQuestion.options.map((option) => {
+            {currentQuestion?.options.map((option) => {
               const isSelected = selectedAnswer === option
               const isCorrect = option === currentQuestion.correctAnswer
 
               let buttonClasses =
                 "border text-lg border-purple-500 border-b-4 py-4 text-zinc-200 w-full bg-transparent rounded-full transition-colors"
 
-              // Se já foi checada, colorir dependendo do acerto/erro
               if (isChecked) {
                 if (isSelected && isCorrect) {
-                  buttonClasses += " bg-green-600/60"
+                  buttonClasses += " bg-green-600/60 border-green-500"
                 } else if (isSelected && !isCorrect) {
-                  buttonClasses += " bg-red-600/60"
+                  buttonClasses += " bg-red-600/60 border-red-500"
+                } else if (isCorrect) {
+                  buttonClasses += " bg-green-600/60 border-green-500"
                 }
               } else if (isSelected) {
-                // Se ainda não checou, mas selecionou
                 buttonClasses += " bg-white/10"
               }
 
@@ -125,13 +158,13 @@ export default function QuizPage() {
           </div>
 
           {/* Feedback de correção */}
-          {isChecked && selectedAnswer !== currentQuestion.correctAnswer && (
+          {isChecked && selectedAnswer !== currentQuestion?.correctAnswer && (
             <div
               className="text-red-400 mt-2"
-              dangerouslySetInnerHTML={{ __html: currentQuestion.correction }}
+              dangerouslySetInnerHTML={{ __html: currentQuestion?.correction }}
             />
           )}
-          {isChecked && selectedAnswer === currentQuestion.correctAnswer && (
+          {isChecked && selectedAnswer === currentQuestion?.correctAnswer && (
             <div className="text-green-400 mt-2">Correct!</div>
           )}
         </div>
@@ -146,7 +179,7 @@ export default function QuizPage() {
           {!isChecked && (
             <Button
               variant="default"
-              className="w-full bg-purple-600/80 rounded-full py-4 text-white text-2xl hover:bg-purple-700/90 transition-colors"
+              className="w-full bg-purple-600 rounded-full py-4 text-white text-2xl hover:bg-purple-700 transition-colors"
               onClick={handleCheck}
               disabled={!selectedAnswer}
             >
@@ -158,7 +191,7 @@ export default function QuizPage() {
           {showNextButton && (
             <Button
               variant="default"
-              className="mt-2 w-full bg-blue-600/80 rounded-full py-4 text-white text-2xl hover:bg-blue-700/90 transition-colors"
+              className="mt-2 w-full bg-blue-600 rounded-full py-4 text-white text-2xl hover:bg-blue-700 transition-colors"
               onClick={handleNext}
             >
               Next
@@ -170,7 +203,7 @@ export default function QuizPage() {
             <div className="flex flex-col space-y-2">
               <Button
                 variant="default"
-                className="w-full bg-green-600/80 rounded-full py-4 text-white text-2xl hover:bg-green-700/90 transition-colors"
+                className="w-full bg-green-600 rounded-full py-4 text-white text-2xl hover:bg-green-700 transition-colors"
                 onClick={() => alert(`Quiz finished! Your score: ${score}/${totalQuestions}`)}
               >
                 Finish
@@ -182,6 +215,30 @@ export default function QuizPage() {
           )}
         </motion.div>
       </motion.div>
+
+      <AlertDialog open={showCancelModal} onOpenChange={setShowCancelModal}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure you want to cancel the quiz?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Your progress will be lost if you cancel now.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Continue Quiz</AlertDialogCancel>
+            <AlertDialogAction onClick={handleConfirmCancel}>Cancel Quiz</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </main>
   )
+}
+
+function shuffleArray<T>(array: T[]): T[] {
+  const newArray = [...array]
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]]
+  }
+  return newArray
 }
