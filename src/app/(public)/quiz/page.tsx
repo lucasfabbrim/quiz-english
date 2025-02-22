@@ -124,7 +124,6 @@ function QuizContent({
   selectedAnswer,
   isChecked,
   handleSelectAnswer,
-  score,
 }: {
   currentQuestion: QuizItem
   currentIndex: number
