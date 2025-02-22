@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { X } from 'lucide-react'
+import { X } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/alert-dialog"
 
 import Men from "@/assets/homem.png"
-import { quizData, QuizItem } from "@/utils/anwsers"
+import { quizData, type QuizItem } from "@/utils/anwsers"
 
 export default function QuizPage() {
   const router = useRouter()
@@ -33,8 +33,8 @@ export default function QuizPage() {
   const [showCancelModal, setShowCancelModal] = useState(false)
 
   useEffect(() => {
-    const selectedQuestions = Object.values(quizData).flatMap(verbQuestions => 
-      shuffleArray(verbQuestions).slice(0, 3)
+    const selectedQuestions = Object.values(quizData).flatMap((verbQuestions) =>
+      shuffleArray(verbQuestions).slice(0, 3),
     )
     setQuestions(shuffleArray(selectedQuestions))
   }, [])
@@ -70,7 +70,7 @@ export default function QuizPage() {
   }
 
   function handleConfirmCancel() {
-    router.push('/')
+    router.push("/")
   }
 
   const isLastQuestion = currentIndex === totalQuestions - 1
@@ -78,14 +78,9 @@ export default function QuizPage() {
   const showFinishButton = isChecked && isLastQuestion
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#17153b] via-[#2e236c] to-[#433d8b] flex flex-col items-center p-4">
+    <main className="min-h-screen bg-gradient-to-br from-[#17153b] via-[#2e236c] to-[#433d8b] flex flex-col items-center p-3">
       <div className="w-full max-w-sm flex justify-end mb-4">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white hover:bg-white/10"
-          onClick={handleCancel}
-        >
+        <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={handleCancel}>
           <X className="h-6 w-6" />
         </Button>
       </div>
@@ -100,27 +95,16 @@ export default function QuizPage() {
           <Progress value={progressValue} className="mb-4" />
 
           <div className="flex flex-col gap-1 justify-start text-start items-start">
-            <p className="text-zinc-200 tracking-tighter text-2xl">
-              Complete the blank space
-            </p>
+            <p className="text-zinc-200 tracking-tighter text-xl">Complete the blank space</p>
           </div>
-          <p className="text-zinc-400 text-sm mt-2">
-            {`Question ${currentIndex + 1} of ${totalQuestions}`}
-          </p>
+          <p className="text-zinc-400 text-sm mt-2">{`Question ${currentIndex + 1} of ${totalQuestions}`}</p>
 
-          <div className="flex items-center mt-6 py-4 space-x-4">
-            <div className="relative w-20 h-20 overflow-hidden rounded-full">
-              <Image 
-                alt="Men" 
-                src={Men || "/placeholder.svg"} 
-                fill
-                className="object-cover"
-              />
+          <div className="flex items-center mt-4 py-2 space-x-3">
+            <div className="relative w-16 h-16 overflow-hidden rounded-full">
+              <Image alt="Men" src={Men || "/placeholder.svg"} fill className="object-cover" />
             </div>
             <Card className="bg-transparent rounded-lg text-zinc-200 border border-zinc-600 w-full">
-              <CardContent className="py-4 px-4">
-                {currentQuestion?.phrase}
-              </CardContent>
+              <CardContent className="py-3 px-3 text-base">{currentQuestion?.phrase}</CardContent>
             </Card>
           </div>
 
@@ -147,7 +131,7 @@ export default function QuizPage() {
               return (
                 <Button
                   key={option}
-                  className={buttonClasses}
+                  className={`border text-base border-purple-500 border-b-4 py-3 text-zinc-200 w-full bg-transparent rounded-full transition-colors ${buttonClasses}`}
                   onClick={() => handleSelectAnswer(option)}
                   disabled={isChecked}
                 >
@@ -159,10 +143,7 @@ export default function QuizPage() {
 
           {/* Feedback de correção */}
           {isChecked && selectedAnswer !== currentQuestion?.correctAnswer && (
-            <div
-              className="text-red-400 mt-2"
-              dangerouslySetInnerHTML={{ __html: currentQuestion?.correction }}
-            />
+            <div className="text-red-400 mt-2" dangerouslySetInnerHTML={{ __html: currentQuestion?.correction }} />
           )}
           {isChecked && selectedAnswer === currentQuestion?.correctAnswer && (
             <div className="text-green-400 mt-2">Correct!</div>
@@ -170,11 +151,7 @@ export default function QuizPage() {
         </div>
 
         {/* Bottom Section */}
-        <motion.div 
-          whileHover={{ scale: 1.05 }} 
-          whileTap={{ scale: 0.95 }}
-          className="pt-4 pb-6"
-        >
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pt-4 pb-6">
           {/* Botão Check */}
           {!isChecked && (
             <Button
@@ -220,9 +197,7 @@ export default function QuizPage() {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure you want to cancel the quiz?</AlertDialogTitle>
-            <AlertDialogDescription>
-              Your progress will be lost if you cancel now.
-            </AlertDialogDescription>
+            <AlertDialogDescription>Your progress will be lost if you cancel now.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Continue Quiz</AlertDialogCancel>
@@ -237,8 +212,9 @@ export default function QuizPage() {
 function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array]
   for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]]
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
   }
   return newArray
 }
+
