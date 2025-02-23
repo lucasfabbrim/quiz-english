@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRightCircle } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
-import { TypingEffect } from "./components/typing-effect"
+import { TypingEffect } from "@/components/typing-effect"
 import Link from "next/link"
 
 export default function Home() {

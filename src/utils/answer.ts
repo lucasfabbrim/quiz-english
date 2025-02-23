@@ -17,7 +17,7 @@ export const quizData = {
       phrase: "I ____ happy to see you.",
       options: ["am", "are", "is"],
       correctAnswer: "am",
-      correction: "Incorrect! The correct sentence is: I <u>am</u> happy to see you.",
+      correction: "The correct sentence is: I <u>am</u> happy to see you.",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export const quizData = {
       phrase: "You ____ a student at this school.",
       options: ["am", "are", "is"],
       correctAnswer: "are",
-      correction: "Incorrect! The correct sentence is: You <u>are</u> a student at this school.",
+      correction: "The correct sentence is: You <u>are</u> a student at this school.",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export const quizData = {
       phrase: "He ____ from Brazil.",
       options: ["am", "are", "is"],
       correctAnswer: "is",
-      correction: "Incorrect! The correct sentence is: He <u>is</u> from Brazil.",
+      correction: "The correct sentence is: He <u>is</u> from Brazil.",
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ export const quizData = {
       phrase: "We ____ very excited about the trip.",
       options: ["am", "are", "is"],
       correctAnswer: "are",
-      correction: "Incorrect! The correct sentence is: We <u>are</u> very excited about the trip.",
+      correction: "The correct sentence is: We <u>are</u> very excited about the trip.",
     },
     {
       id: 5,
@@ -53,7 +53,7 @@ export const quizData = {
       phrase: "They ____ my best friends.",
       options: ["am", "are", "is"],
       correctAnswer: "are",
-      correction: "Incorrect! The correct sentence is: They <u>are</u> my best friends.",
+      correction: "The correct sentence is: They <u>are</u> my best friends.",
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ export const quizData = {
       phrase: "This ____ my favorite book.",
       options: ["am", "are", "is"],
       correctAnswer: "is",
-      correction: "Incorrect! The correct sentence is: This <u>is</u> my favorite book.",
+      correction: "The correct sentence is: This <u>is</u> my favorite book.",
     },
   ] as QuizItem[],
 
@@ -74,7 +74,7 @@ export const quizData = {
       phrase: "I ____ two dogs and a cat.",
       options: ["have", "has", "had"],
       correctAnswer: "have",
-      correction: "Incorrect! The correct sentence is: I <u>have</u> two dogs and a cat.",
+      correction: "The correct sentence is: I <u>have</u> two dogs and a cat.",
     },
     {
       id: 2,
@@ -83,7 +83,7 @@ export const quizData = {
       phrase: "He ____ a big house in the countryside.",
       options: ["have", "has", "had"],
       correctAnswer: "has",
-      correction: "Incorrect! The correct sentence is: He <u>has</u> a big house in the countryside.",
+      correction: "The correct sentence is: He <u>has</u> a big house in the countryside.",
     },
     {
       id: 3,
@@ -92,7 +92,7 @@ export const quizData = {
       phrase: "We ____ enough time to finish this project.",
       options: ["have", "has", "had"],
       correctAnswer: "have",
-      correction: "Incorrect! The correct sentence is: We <u>have</u> enough time to finish this project.",
+      correction: "The correct sentence is: We <u>have</u> enough time to finish this project.",
     },
     {
       id: 4,
@@ -101,7 +101,7 @@ export const quizData = {
       phrase: "She ____ a meeting at 3 p.m.",
       options: ["have", "has", "had"],
       correctAnswer: "has",
-      correction: "Incorrect! The correct sentence is: She <u>has</u> a meeting at 3 p.m.",
+      correction: "The correct sentence is: She <u>has</u> a meeting at 3 p.m.",
     },
     {
       id: 5,
@@ -110,7 +110,7 @@ export const quizData = {
       phrase: "They ____ a new car.",
       options: ["have", "has", "had"],
       correctAnswer: "have",
-      correction: "Incorrect! The correct sentence is: They <u>have</u> a new car.",
+      correction: "The correct sentence is: They <u>have</u> a new car.",
     },
     {
       id: 6,
@@ -119,7 +119,7 @@ export const quizData = {
       phrase: "I ____ a question for you.",
       options: ["have", "has", "had"],
       correctAnswer: "have",
-      correction: "Incorrect! The correct sentence is: I <u>have</u> a question for you.",
+      correction: "The correct sentence is: I <u>have</u> a question for you.",
     },
   ] as QuizItem[],
 
@@ -131,7 +131,7 @@ export const quizData = {
       phrase: "I ____ to speak three languages.",
       options: ["am able", "are able", "can"],
       correctAnswer: "am able",
-      correction: "Incorrect! The correct sentence is: I <u>am able</u> to speak three languages.",
+      correction: "The correct sentence is: I <u>am able</u> to speak three languages.",
     },
     {
       id: 2,
@@ -140,7 +140,7 @@ export const quizData = {
       phrase: "She ____ to finish the report on time.",
       options: ["am able", "is able", "are able"],
       correctAnswer: "is able",
-      correction: "Incorrect! The correct sentence is: She <u>is able</u> to finish the report on time.",
+      correction: "The correct sentence is: She <u>is able</u> to finish the report on time.",
     },
     {
       id: 3,
@@ -149,7 +149,7 @@ export const quizData = {
       phrase: "We ____ to solve the puzzle quickly.",
       options: ["is able", "are able", "am able"],
       correctAnswer: "are able",
-      correction: "Incorrect! The correct sentence is: We <u>are able</u> to solve the puzzle quickly.",
+      correction: "The correct sentence is: We <u>are able</u> to solve the puzzle quickly.",
     },
     {
       id: 4,
@@ -158,7 +158,7 @@ export const quizData = {
       phrase: "They ____ to travel abroad next year.",
       options: ["will be able", "are able", "was able"],
       correctAnswer: "will be able",
-      correction: "Incorrect! The correct sentence is: They <u>will be able</u> to travel abroad next year.",
+      correction: "The correct sentence is: They <u>will be able</u> to travel abroad next year.",
     },
     {
       id: 5,
@@ -167,7 +167,7 @@ export const quizData = {
       phrase: "He ____ to come to the party after all.",
       options: ["was able", "is able", "will be able"],
       correctAnswer: "was able",
-      correction: "Incorrect! The correct sentence is: He <u>was able</u> to come to the party after all.",
+      correction: "The correct sentence is: He <u>was able</u> to come to the party after all.",
     },
     {
       id: 6,
@@ -176,7 +176,7 @@ export const quizData = {
       phrase: "I hope I ____ to help you soon.",
       options: ["am able", "are able", "is able"],
       correctAnswer: "am able",
-      correction: "Incorrect! The correct sentence is: I hope I <u>am able</u> to help you soon.",
+      correction: "The correct sentence is: I hope I <u>am able</u> to help you soon.",
     },
   ] as QuizItem[],
 
@@ -188,7 +188,7 @@ export const quizData = {
       phrase: "I always ____ home late on Fridays.",
       options: ["come", "comes", "came"],
       correctAnswer: "come",
-      correction: "Incorrect! The correct sentence is: I always <u>come</u> home late on Fridays.",
+      correction: "The correct sentence is: I always <u>come</u> home late on Fridays.",
     },
     {
       id: 2,
@@ -197,7 +197,7 @@ export const quizData = {
       phrase: "She ____ to visit us every summer.",
       options: ["come", "comes", "came"],
       correctAnswer: "comes",
-      correction: "Incorrect! The correct sentence is: She <u>comes</u> to visit us every summer.",
+      correction: "The correct sentence is: She <u>comes</u> to visit us every summer.",
     },
     {
       id: 3,
@@ -206,7 +206,7 @@ export const quizData = {
       phrase: "They ____ by train from the city.",
       options: ["come", "comes", "came"],
       correctAnswer: "come",
-      correction: "Incorrect! The correct sentence is: They <u>come</u> by train from the city.",
+      correction: "The correct sentence is: They <u>come</u> by train from the city.",
     },
     {
       id: 4,
@@ -215,7 +215,7 @@ export const quizData = {
       phrase: "We ____ here to learn English.",
       options: ["come", "comes", "came"],
       correctAnswer: "come",
-      correction: "Incorrect! The correct sentence is: We <u>come</u> here to learn English.",
+      correction: "The correct sentence is: We <u>come</u> here to learn English.",
     },
     {
       id: 5,
@@ -224,7 +224,7 @@ export const quizData = {
       phrase: "He ____ to class early every day.",
       options: ["come", "comes", "came"],
       correctAnswer: "comes",
-      correction: "Incorrect! The correct sentence is: He <u>comes</u> to class early every day.",
+      correction: "The correct sentence is: He <u>comes</u> to class early every day.",
     },
     {
       id: 6,
@@ -233,7 +233,7 @@ export const quizData = {
       phrase: "We ____ to an agreement after a long debate.",
       options: ["come", "comes", "came"],
       correctAnswer: "came",
-      correction: "Incorrect! The correct sentence is: We <u>came</u> to an agreement after a long debate.",
+      correction: "The correct sentence is: We <u>came</u> to an agreement after a long debate.",
     },
   ] as QuizItem[],
 
@@ -245,7 +245,7 @@ export const quizData = {
       phrase: "I ____ to the gym every morning.",
       options: ["go", "goes", "went"],
       correctAnswer: "go",
-      correction: "Incorrect! The correct sentence is: I <u>go</u> to the gym every morning.",
+      correction: "The correct sentence is: I <u>go</u> to the gym every morning.",
     },
     {
       id: 2,
@@ -254,7 +254,7 @@ export const quizData = {
       phrase: "She ____ to work by bus.",
       options: ["go", "goes", "went"],
       correctAnswer: "goes",
-      correction: "Incorrect! The correct sentence is: She <u>goes</u> to work by bus.",
+      correction: "The correct sentence is: She <u>goes</u> to work by bus.",
     },
     {
       id: 3,
@@ -263,7 +263,7 @@ export const quizData = {
       phrase: "We ____ to that restaurant often.",
       options: ["go", "goes", "went"],
       correctAnswer: "go",
-      correction: "Incorrect! The correct sentence is: We <u>go</u> to that restaurant often.",
+      correction: "The correct sentence is: We <u>go</u> to that restaurant often.",
     },
     {
       id: 4,
@@ -272,7 +272,7 @@ export const quizData = {
       phrase: "They ____ on vacation twice a year.",
       options: ["go", "goes", "went"],
       correctAnswer: "go",
-      correction: "Incorrect! The correct sentence is: They <u>go</u> on vacation twice a year.",
+      correction: "The correct sentence is: They <u>go</u> on vacation twice a year.",
     },
     {
       id: 5,
@@ -281,7 +281,7 @@ export const quizData = {
       phrase: "He ____ to bed very late.",
       options: ["go", "goes", "went"],
       correctAnswer: "goes",
-      correction: "Incorrect! The correct sentence is: He <u>goes</u> to bed very late.",
+      correction: "The correct sentence is: He <u>goes</u> to bed very late.",
     },
     {
       id: 6,
@@ -290,7 +290,7 @@ export const quizData = {
       phrase: "I ____ to the supermarket yesterday.",
       options: ["go", "goes", "went"],
       correctAnswer: "went",
-      correction: "Incorrect! The correct sentence is: I <u>went</u> to the supermarket yesterday.",
+      correction: "The correct sentence is: I <u>went</u> to the supermarket yesterday.",
     },
   ] as QuizItem[],
 
@@ -302,7 +302,7 @@ export const quizData = {
       phrase: "I ____ the answer to that question.",
       options: ["know", "knows", "knew"],
       correctAnswer: "know",
-      correction: "Incorrect! The correct sentence is: I <u>know</u> the answer to that question.",
+      correction: "The correct sentence is: I <u>know</u> the answer to that question.",
     },
     {
       id: 2,
@@ -311,7 +311,7 @@ export const quizData = {
       phrase: "She ____ a lot about art history.",
       options: ["know", "knows", "knew"],
       correctAnswer: "knows",
-      correction: "Incorrect! The correct sentence is: She <u>knows</u> a lot about art history.",
+      correction: "The correct sentence is: She <u>knows</u> a lot about art history.",
     },
     {
       id: 3,
@@ -320,7 +320,7 @@ export const quizData = {
       phrase: "We ____ how to fix this machine.",
       options: ["know", "knows", "knew"],
       correctAnswer: "know",
-      correction: "Incorrect! The correct sentence is: We <u>know</u> how to fix this machine.",
+      correction: "The correct sentence is: We <u>know</u> how to fix this machine.",
     },
     {
       id: 4,
@@ -329,7 +329,7 @@ export const quizData = {
       phrase: "They ____ the best way to get there.",
       options: ["know", "knows", "knew"],
       correctAnswer: "know",
-      correction: "Incorrect! The correct sentence is: They <u>know</u> the best way to get there.",
+      correction: "The correct sentence is: They <u>know</u> the best way to get there.",
     },
     {
       id: 5,
@@ -338,7 +338,7 @@ export const quizData = {
       phrase: "He ____ your cousin from college.",
       options: ["know", "knows", "knew"],
       correctAnswer: "knows",
-      correction: "Incorrect! The correct sentence is: He <u>knows</u> your cousin from college.",
+      correction: "The correct sentence is: He <u>knows</u> your cousin from college.",
     },
     {
       id: 6,
@@ -347,7 +347,7 @@ export const quizData = {
       phrase: "I ____ him since we were kids.",
       options: ["have known", "know", "knew"],
       correctAnswer: "have known",
-      correction: "Incorrect! The correct sentence is: I <u>have known</u> him since we were kids.",
+      correction: "The correct sentence is: I <u>have known</u> him since we were kids.",
     },
   ] as QuizItem[],
 
@@ -359,7 +359,7 @@ export const quizData = {
       phrase: "I always ____ a shower in the morning.",
       options: ["take", "takes", "took"],
       correctAnswer: "take",
-      correction: "Incorrect! The correct sentence is: I always <u>take</u> a shower in the morning.",
+      correction: "The correct sentence is: I always <u>take</u> a shower in the morning.",
     },
     {
       id: 2,
@@ -368,7 +368,7 @@ export const quizData = {
       phrase: "She ____ the bus to work.",
       options: ["take", "takes", "took"],
       correctAnswer: "takes",
-      correction: "Incorrect! The correct sentence is: She <u>takes</u> the bus to work.",
+      correction: "The correct sentence is: She <u>takes</u> the bus to work.",
     },
     {
       id: 3,
@@ -377,7 +377,7 @@ export const quizData = {
       phrase: "We ____ turns driving on road trips.",
       options: ["take", "takes", "took"],
       correctAnswer: "take",
-      correction: "Incorrect! The correct sentence is: We <u>take</u> turns driving on road trips.",
+      correction: "The correct sentence is: We <u>take</u> turns driving on road trips.",
     },
     {
       id: 4,
@@ -386,7 +386,7 @@ export const quizData = {
       phrase: "They ____ a break every two hours.",
       options: ["take", "takes", "took"],
       correctAnswer: "take",
-      correction: "Incorrect! The correct sentence is: They <u>take</u> a break every two hours.",
+      correction: "The correct sentence is: They <u>take</u> a break every two hours.",
     },
     {
       id: 5,
@@ -395,7 +395,7 @@ export const quizData = {
       phrase: "He ____ a deep breath before speaking.",
       options: ["take", "takes", "took"],
       correctAnswer: "takes",
-      correction: "Incorrect! The correct sentence is: He <u>takes</u> a deep breath before speaking.",
+      correction: "The correct sentence is: He <u>takes</u> a deep breath before speaking.",
     },
     {
       id: 6,
@@ -404,7 +404,7 @@ export const quizData = {
       phrase: "I ____ my phone with me everywhere.",
       options: ["take", "takes", "took"],
       correctAnswer: "take",
-      correction: "Incorrect! The correct sentence is: I <u>take</u> my phone with me everywhere.",
+      correction: "The correct sentence is: I <u>take</u> my phone with me everywhere.",
     },
   ] as QuizItem[],
 
@@ -416,7 +416,7 @@ export const quizData = {
       phrase: "I ____ to learn Spanish.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "want",
-      correction: "Incorrect! The correct sentence is: I <u>want</u> to learn Spanish.",
+      correction: "The correct sentence is: I <u>want</u> to learn Spanish.",
     },
     {
       id: 2,
@@ -425,7 +425,7 @@ export const quizData = {
       phrase: "She ____ a new laptop for her birthday.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "wants",
-      correction: "Incorrect! The correct sentence is: She <u>wants</u> a new laptop for her birthday.",
+      correction: "The correct sentence is: She <u>wants</u> a new laptop for her birthday.",
     },
     {
       id: 3,
@@ -434,7 +434,7 @@ export const quizData = {
       phrase: "We ____ to travel the world someday.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "want",
-      correction: "Incorrect! The correct sentence is: We <u>want</u> to travel the world someday.",
+      correction: "The correct sentence is: We <u>want</u> to travel the world someday.",
     },
     {
       id: 4,
@@ -443,7 +443,7 @@ export const quizData = {
       phrase: "They ____ more free time.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "want",
-      correction: "Incorrect! The correct sentence is: They <u>want</u> more free time.",
+      correction: "The correct sentence is: They <u>want</u> more free time.",
     },
     {
       id: 5,
@@ -452,7 +452,7 @@ export const quizData = {
       phrase: "He ____ to start his own business.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "wants",
-      correction: "Incorrect! The correct sentence is: He <u>wants</u> to start his own business.",
+      correction: "The correct sentence is: He <u>wants</u> to start his own business.",
     },
     {
       id: 6,
@@ -461,7 +461,7 @@ export const quizData = {
       phrase: "I ____ to eat pizza tonight.",
       options: ["want", "wants", "wanted"],
       correctAnswer: "want",
-      correction: "Incorrect! The correct sentence is: I <u>want</u> to eat pizza tonight.",
+      correction: "The correct sentence is: I <u>want</u> to eat pizza tonight.",
     },
   ] as QuizItem[],
 
@@ -473,7 +473,7 @@ export const quizData = {
       phrase: "I always ____ “thank you” when someone helps me.",
       options: ["say", "told", "said"],
       correctAnswer: "say",
-      correction: "Incorrect! The correct sentence is: I always <u>say</u> “thank you” when someone helps me.",
+      correction: "The correct sentence is: I always <u>say</u> “thank you” when someone helps me.",
     },
     {
       id: 2,
@@ -482,7 +482,7 @@ export const quizData = {
       phrase: "She ____ me a secret yesterday.",
       options: ["tell", "told", "says"],
       correctAnswer: "told",
-      correction: "Incorrect! The correct sentence is: She <u>told</u> me a secret yesterday.",
+      correction: "The correct sentence is: She <u>told</u> me a secret yesterday.",
     },
     {
       id: 3,
@@ -491,7 +491,7 @@ export const quizData = {
       phrase: "We ____ hello to our neighbors every morning.",
       options: ["say", "says", "told"],
       correctAnswer: "say",
-      correction: "Incorrect! The correct sentence is: We <u>say</u> hello to our neighbors every morning.",
+      correction: "The correct sentence is: We <u>say</u> hello to our neighbors every morning.",
     },
     {
       id: 4,
@@ -500,7 +500,7 @@ export const quizData = {
       phrase: "They ____ us about their vacation plans.",
       options: ["told", "said", "tell"],
       correctAnswer: "told",
-      correction: "Incorrect! The correct sentence is: They <u>told</u> us about their vacation plans.",
+      correction: "The correct sentence is: They <u>told</u> us about their vacation plans.",
     },
     {
       id: 5,
@@ -509,7 +509,7 @@ export const quizData = {
       phrase: "He ____ that he would be late.",
       options: ["say", "said", "tell"],
       correctAnswer: "said",
-      correction: "Incorrect! The correct sentence is: He <u>said</u> that he would be late.",
+      correction: "The correct sentence is: He <u>said</u> that he would be late.",
     },
     {
       id: 6,
@@ -518,7 +518,7 @@ export const quizData = {
       phrase: "I ____ sorry for being late.",
       options: ["say", "told", "said"],
       correctAnswer: "said",
-      correction: "Incorrect! The correct sentence is: I <u>said</u> sorry for being late.",
+      correction: "The correct sentence is: I <u>said</u> sorry for being late.",
     },
   ] as QuizItem[],
 
@@ -530,7 +530,7 @@ export const quizData = {
       phrase: "I always ____ my bed in the morning.",
       options: ["make", "do", "made"],
       correctAnswer: "make",
-      correction: "Incorrect! The correct sentence is: I always <u>make</u> my bed in the morning.",
+      correction: "The correct sentence is: I always <u>make</u> my bed in the morning.",
     },
     {
       id: 2,
@@ -539,7 +539,7 @@ export const quizData = {
       phrase: "She ____ her homework before dinner.",
       options: ["do", "does", "did"],
       correctAnswer: "does",
-      correction: "Incorrect! The correct sentence is: She <u>does</u> her homework before dinner.",
+      correction: "The correct sentence is: She <u>does</u> her homework before dinner.",
     },
     {
       id: 3,
@@ -548,7 +548,7 @@ export const quizData = {
       phrase: "We ____ the dishes every evening.",
       options: ["do", "does", "did"],
       correctAnswer: "do",
-      correction: "Incorrect! The correct sentence is: We <u>do</u> the dishes every evening.",
+      correction: "The correct sentence is: We <u>do</u> the dishes every evening.",
     },
     {
       id: 4,
@@ -557,7 +557,7 @@ export const quizData = {
       phrase: "They ____ plans for the weekend.",
       options: ["make", "do", "made"],
       correctAnswer: "make",
-      correction: "Incorrect! The correct sentence is: They <u>make</u> plans for the weekend.",
+      correction: "The correct sentence is: They <u>make</u> plans for the weekend.",
     },
     {
       id: 5,
@@ -566,7 +566,7 @@ export const quizData = {
       phrase: "He ____ a lot of mistakes on the test.",
       options: ["made", "did", "does"],
       correctAnswer: "made",
-      correction: "Incorrect! The correct sentence is: He <u>made</u> a lot of mistakes on the test.",
+      correction: "The correct sentence is: He <u>made</u> a lot of mistakes on the test.",
     },
     {
       id: 6,
@@ -575,7 +575,7 @@ export const quizData = {
       phrase: "I ____ exercise three times a week.",
       options: ["do", "make", "did"],
       correctAnswer: "do",
-      correction: "Incorrect! The correct sentence is: I <u>do</u> exercise three times a week.",
+      correction: "The correct sentence is: I <u>do</u> exercise three times a week.",
     },
   ] as QuizItem[],
 
@@ -587,7 +587,7 @@ export const quizData = {
       phrase: "I ____ a shooting star last night.",
       options: ["see", "saw", "seen"],
       correctAnswer: "saw",
-      correction: "Incorrect! The correct sentence is: I <u>saw</u> a shooting star last night.",
+      correction: "The correct sentence is: I <u>saw</u> a shooting star last night.",
     },
     {
       id: 2,
@@ -596,7 +596,7 @@ export const quizData = {
       phrase: "She ____ her old friend at the supermarket.",
       options: ["see", "saw", "seen"],
       correctAnswer: "saw",
-      correction: "Incorrect! The correct sentence is: She <u>saw</u> her old friend at the supermarket.",
+      correction: "The correct sentence is: She <u>saw</u> her old friend at the supermarket.",
     },
     {
       id: 3,
@@ -605,7 +605,7 @@ export const quizData = {
       phrase: "We ____ a movie at the theater.",
       options: ["see", "saw", "seen"],
       correctAnswer: "saw",
-      correction: "Incorrect! The correct sentence is: We <u>saw</u> a movie at the theater.",
+      correction: "The correct sentence is: We <u>saw</u> a movie at the theater.",
     },
     {
       id: 4,
@@ -614,7 +614,7 @@ export const quizData = {
       phrase: "They ____ the results of the test.",
       options: ["see", "saw", "seen"],
       correctAnswer: "saw",
-      correction: "Incorrect! The correct sentence is: They <u>saw</u> the results of the test.",
+      correction: "The correct sentence is: They <u>saw</u> the results of the test.",
     },
     {
       id: 5,
@@ -623,7 +623,7 @@ export const quizData = {
       phrase: "He ____ a doctor every six months.",
       options: ["see", "sees", "saw"],
       correctAnswer: "sees",
-      correction: "Incorrect! The correct sentence is: He <u>sees</u> a doctor every six months.",
+      correction: "The correct sentence is: He <u>sees</u> a doctor every six months.",
     },
     {
       id: 6,
@@ -632,7 +632,7 @@ export const quizData = {
       phrase: "I ____ the difference between these two colors.",
       options: ["see", "sees", "saw"],
       correctAnswer: "see",
-      correction: "Incorrect! The correct sentence is: I <u>see</u> the difference between these two colors.",
+      correction: "The correct sentence is: I <u>see</u> the difference between these two colors.",
     },
   ] as QuizItem[],
 
@@ -644,7 +644,7 @@ export const quizData = {
       phrase: "I ____ a gift to my friend on her birthday.",
       options: ["gave", "give", "given"],
       correctAnswer: "gave",
-      correction: "Incorrect! The correct sentence is: I <u>gave</u> a gift to my friend on her birthday.",
+      correction: "The correct sentence is: I <u>gave</u> a gift to my friend on her birthday.",
     },
     {
       id: 2,
@@ -653,7 +653,7 @@ export const quizData = {
       phrase: "She ____ me a ride to work.",
       options: ["gave", "give", "given"],
       correctAnswer: "gave",
-      correction: "Incorrect! The correct sentence is: She <u>gave</u> me a ride to work.",
+      correction: "The correct sentence is: She <u>gave</u> me a ride to work.",
     },
     {
       id: 3,
@@ -662,7 +662,7 @@ export const quizData = {
       phrase: "We ____ our time to volunteer.",
       options: ["give", "gave", "given"],
       correctAnswer: "give",
-      correction: "Incorrect! The correct sentence is: We <u>give</u> our time to volunteer.",
+      correction: "The correct sentence is: We <u>give</u> our time to volunteer.",
     },
     {
       id: 4,
@@ -671,7 +671,7 @@ export const quizData = {
       phrase: "They ____ us permission to enter.",
       options: ["gave", "give", "given"],
       correctAnswer: "gave",
-      correction: "Incorrect! The correct sentence is: They <u>gave</u> us permission to enter.",
+      correction: "The correct sentence is: They <u>gave</u> us permission to enter.",
     },
     {
       id: 5,
@@ -680,7 +680,7 @@ export const quizData = {
       phrase: "He ____ a speech at the conference.",
       options: ["gave", "give", "given"],
       correctAnswer: "gave",
-      correction: "Incorrect! The correct sentence is: He <u>gave</u> a speech at the conference.",
+      correction: "The correct sentence is: He <u>gave</u> a speech at the conference.",
     },
     {
       id: 6,
@@ -689,7 +689,7 @@ export const quizData = {
       phrase: "She ____ him a second chance.",
       options: ["gave", "give", "given"],
       correctAnswer: "gave",
-      correction: "Incorrect! The correct sentence is: She <u>gave</u> him a second chance.",
+      correction: "The correct sentence is: She <u>gave</u> him a second chance.",
     },
   ] as QuizItem[],
 }

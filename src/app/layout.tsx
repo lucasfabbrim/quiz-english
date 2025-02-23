@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Practice your English",
+  title: "Note English - Quiz",
   description: "Created by Lucas Mendes",
 };
 
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-indigo-950">{children}</body>
+      <body className="bg-[#1C1B22] flex items-center justify-center p-4">{children}</body>
     </html>
   );
 }
