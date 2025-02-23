@@ -19,7 +19,6 @@ export default function QuizPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [isChecked, setIsChecked] = useState(false)
-  const [showExplanation, setShowExplanation] = useState(false)
 
   useEffect(() => {
     const selectedQuestions = Object.values(quizData).flatMap((verbQuestions) =>
@@ -45,7 +44,6 @@ export default function QuizPage() {
   const handleNext = () => {
     setIsChecked(false)
     setSelectedAnswer(null)
-    setShowExplanation(false)
     setCurrentIndex((prev) => prev + 1)
   }
 

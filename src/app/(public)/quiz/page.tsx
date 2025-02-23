@@ -36,7 +36,7 @@ export default function Home() {
             className="text-zinc-200 text-4xl font-medium tracking-tighter mb-4"
           />        
           <div className="text-zinc-300 space-y-2 mb-8">
-            <p className="text-base">Don't forget, this would be the content! 👇🏻</p>
+            <p className="text-base">Esses são os verbos que irão cair no Quiz 👇🏻</p>
             <p className="text-sm tracking-tighter text-zinc-400 font-light">
               (to be, to have, to be able, to come, to go, to know, to take, to want, to say/tell, to do/make, to see, to give)
             </p>
@@ -49,7 +49,7 @@ export default function Home() {
               onMouseLeave={() => setIsHovered(false)}
               className="w-full bg-emerald-600/80 rounded-full py-3 text-white text-lg flex items-center justify-center gap-4 transition-all duration-300 hover:bg-emerald-600/90 hover:to-emerald-600/20 border border-b-4 border-emerald-800"
             >
-              Let's go
+              Estou pronto
               <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
                 <ArrowRightCircle size={20} className="text-zinc-200" aria-hidden="true" />
               </motion.div>
