@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-indigo-950 flex items-center justify-center p-4">
+    <main className="min-h-screen flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -54,11 +54,11 @@ export default function Home() {
             onClick={handleStartQuiz}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="w-full bg-purple-600/80 rounded-full py-4 text-white text-xl flex items-center justify-center gap-4 transition-all duration-300 hover:from-purple-600/90 hover:to-zinc-600/20"
+            className="w-full bg-emerald-600/80 rounded-full py-3 text-white text-lg flex items-center justify-center gap-4 transition-all duration-300 hover:bg-emerald-600/90 hover:to-zinc-600/20 border border-b-4 border-emerald-800"
           >
             Start quiz
             <motion.div animate={{ x: isHovered ? 5 : 0 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
-              <ArrowRightCircle size={24} className="text-zinc-300" aria-hidden="true" />
+              <ArrowRightCircle size={20} className="text-zinc-200" aria-hidden="true" />
             </motion.div>
           </Button>
         </motion.div>
