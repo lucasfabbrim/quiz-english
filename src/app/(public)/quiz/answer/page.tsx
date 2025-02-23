@@ -77,7 +77,7 @@ export default function QuizPage() {
 
         <h1 className="text-2xl font-bold mb-10">Complete o espaço vazio</h1>
 
-        <div className="flex gap-4 mb-10">
+        <div className="flex gap-4 mb-10 border-b-2 border-b-zinc-700 pb-7">
           <div className="w-24 h-24 flex-shrink-0">
             <Image
               src={Men}
