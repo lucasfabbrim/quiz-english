@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { X, CheckCircle, CircleXIcon, CornerDownLeft, Trophy } from 'lucide-react'
+import { X, CheckCircle, CircleXIcon, Trophy } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
